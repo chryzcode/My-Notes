@@ -1,7 +1,10 @@
+import React from 'react';
+
+
 const Body = () => {
   return (
     <div>
-      <h1>My Body</h1>
+      <h3>Body</h3>
     </div>
   );
 };
