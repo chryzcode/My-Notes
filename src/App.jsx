@@ -13,7 +13,7 @@ function App() {
       <div className="App">
         <Header />
         <Route path="/" exact component={NotesListPage} />
-        <Route path="/note" component={NotePage} />
+        <Route path="/note/:id" component={NotePage} />
       </div>
     </Router>
   );
