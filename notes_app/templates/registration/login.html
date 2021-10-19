@@ -2,5 +2,12 @@
 {% load static %}
 {% load socialaccount %}
 {% block content %}
-<h1>Login</h1>
+
+<div class="login-page-container">
+    <h3 class="page-header" >Sign In</h3>
+    <div class="login-container">
+        <p>My Notes App</p>
+        <a class="btn btn-outline-secondary login-btn" href="{% provider_login_url 'google' %}"><i class="fa fa-google"></i>Google</a>
+    </div>
+</div>
 {% endblock %}

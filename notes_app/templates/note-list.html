@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+{% for note in notes %}
+<ul>
+    <li>{{ note }}</li>
+</ul>
+{% endfor %}
+{{request.user}}
+<a href="{% url 'add-note' %}">Add note</a>
+{% endblock %}
