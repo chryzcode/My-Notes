@@ -17,11 +17,13 @@ body{
     text-align: center;
     font-size: 30px;
     font-weight: 600;
+    color: orange;
 }
 
 .login-page-container{
     margin-top: 40px;
 }
+
 
 .login-container{
     border: 3px solid #252629;
@@ -46,5 +48,60 @@ body{
 }
 
 .login-btn:hover{
+    background-color: #252629;
+}
+
+.notes-container{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 60px;
+    display: block;
+    border: 3px solid #252629;
+    width: 50%;
+}
+
+.note-title{
+    margin-left: 15px;
+    font-size: 18px;
+    padding: 15px;
+    color: white;
+    text-decoration: none;
+}
+
+.note-title > a{
+    margin-left: 15px;
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+}
+
+.note-title > a:hover{
+    margin-left: 10px;
+    color: orange;
+    text-decoration: none;
+}
+
+.note-header{
+    margin-top: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+    color: orange;
+    border-bottom: 3px solid orange;
+}
+
+.note-logo{
+   margin-right: 15px;
+}
+
+.note-count{
+    font-size: 16px;
+}
+
+.note-list{
+    border-bottom: 1px solid #252629;
+    height: 60px;
+}
+
+.note-list:hover{
     background-color: #252629;
 }

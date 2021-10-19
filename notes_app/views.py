@@ -39,7 +39,15 @@ def editNote(request, pk):
 
 @login_required(login_url='login')
 def viewNote(request, pk):
+    context = {}
     note = Note.objects.get(pk = pk)
+    context['note'] = note
     return render(request, 'view-note.html', context)
+
+def deleteNote(request, pk):
+    note = Note.objects.get(pk=pk)
+    if request.method == 'POST':
+        note.delete()
+        return redirect('notes-list')
 
 

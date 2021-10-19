@@ -1,10 +1,17 @@
 {% extends 'base.html' %}
 {% block content %}
+<div class="notes-container">
+<div class="note-header">
+    <h5><span class="note-logo">&#9782;</span>{{request.user}}'s note</h5>
+    <p class="note-count">{{notes.count}}</p>
+</div>
 {% for note in notes %}
-<ul>
-    <li>{{ note }}</li>
-</ul>
+    <div class="note-list">
+         <div class="note-title"><a href="{% url 'view-note' note.pk %}">{{ note }}</a></div>
+    </div>
+    
 {% endfor %}
+</div>
 {{request.user}}
 <a href="{% url 'add-note' %}">Add note</a>
 {% endblock %}
