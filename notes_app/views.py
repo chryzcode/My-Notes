@@ -33,7 +33,7 @@ def editNote(request, pk):
         form = addNoteForm(request.POST, instance=note)
         if form.is_valid():
             form.save()
-            return redirect('note-list')
+            return redirect('view-note', pk=note.pk)
     context = {'form':form}
     return render(request, 'edit-note.html', context)
 

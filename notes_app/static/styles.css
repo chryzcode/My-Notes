@@ -56,7 +56,7 @@ body {
   display: block;
   border: 3px solid #252629;
   width: 500px;
-  border-radius: 14px;
+  border-radius: 8px;
 }
 
 .note-title {
@@ -130,7 +130,7 @@ label{
     display: none;
 }
 
-.add-note-title{
+.a-note-title{
     color: orange;
     text-align: center;
     padding: 10px;
@@ -139,7 +139,40 @@ label{
 .btn.btn-secondary{
   justify-content: right;
   align-items: center;
-  background-color: rgba(255, 166, 0, 0.576);
-    
+  background-color: rgba(255, 166, 0, 0.576);   
+}
+
+#back-to-notes-list{
+    font-size: 30px;
+    /* padding: 8px; */
+}
+
+.note-detail-header{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.icons > a{
+    color: white;
+    text-decoration: none;
+}
+
+.note-detail-header > a{
+    color: white;
+    text-decoration: none;
+}
+
+.icons{
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+
+#edit-note{
+    font-size: 20px;
+}
+
+#delete-note{
+    font-size: 20px;
 }
 

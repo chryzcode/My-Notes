@@ -2,7 +2,7 @@
 {% block content %}
 
 <div class="notes-container">
-    <h4 class="add-note-title" >Edit note</h4>
+    <h4 class="a-note-title" >Edit note</h4>
     <form method="POST">
     {% csrf_token %}
     {{ form.as_p }}

@@ -1,6 +1,14 @@
-{% extends 'base.html' %}
-
-{% block content %}
-<h1>{{note}}</h1>
-<p>{{ note.body }}</p>
+{% extends 'base.html' %} {% block content %}
+<div class="notes-container">
+  <div class="note-detail-header">
+    
+      <a href="{% url 'notes-list' %}"><span id="back-to-notes-list" class="material-icons">chevron_left</span></a>
+      <span class="icons">
+      <a href="{% url 'edit-note' note.pk%}"><span id="edit-note" class="material-icons">edit</span></a>
+      <a href="{% url 'delete-note' note.pk%}"><span id="delete-note" class="material-icons"> delete </span></a>
+    </span>
+  </div>
+  <h4 class="a-note-title">{{note}}</h4>
+  <p>{{ note.body }}</p>
+</div>
 {% endblock %}
