@@ -91,13 +91,24 @@ WSGI_APPLICATION = 'mynotes_api.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        # 'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'd4bjpvf4ltf75v',
+        'USER': 'ootmdmafcnxsma',
+        'PASSWORD': '012975a4728b3c772d12829a744caf1559d79d054447d7f2205f08275f0e68c1',
+        'HOST': 'ec2-44-196-244-150.compute-1.amazonaws.com',
+        'POST': '5432',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
