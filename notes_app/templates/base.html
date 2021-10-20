@@ -19,17 +19,44 @@
     <title>Document</title>
   </head>
   <body>
-    <nav class="nav">
-        <input type="checkbox" id="check" />
-        <label for="check" class="checkbtn">
-          <i id="cross" class="fa fa-times"></i>
-          <i id="bars" class="fas fa-bars"></i>
-        </label>
-        <ul>
-         <li> {{request.user}}</li>
-          </ul>
-      </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <span class="navbar-brand" style="color: orange;">&#9782; My Note App</span>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-    <div class="container">{% block content %} {% endblock %}</div>
+    {% if user.is_authenticated %}
+
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0"">
+        <li class="nav-item"><a class="nav-link" href="{% url 'add-note' %}">Add a note</a></li>
+      </ul>
+      {% else %}
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0"">
+        <li class="nav-item"><a class="nav-link" href="{% url 'add-note' %}">Add a note</a></li>
+      </ul>
+{% endif %}
+
+  {% if user.is_authenticated %}
+  <div class="btn-group">
+    <ul class="nav justify-content-end">
+      <li class="nav-item dropdown" >
+        <a style="color: orange;" class="nav-link dropdown-toggle" class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          {{ request.user }}
+        </a>
+        <ul class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
+          <li><a style="color: orange;" class="dropdown-item" href="{% url 'delete-user' user.pk %}">Delete acc</a></li>
+          <li class="nav-item"><a style="color: orange;" class="nav-link" href="{% url 'logout' %}">Log out</a></li>
+      </ul>
+  </div>
+  {% endif %}
+    </div>
+</nav>
+
+
+    <div class="container">{% block content %} {% endblock %}
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    </div>
   </body>
 </html>

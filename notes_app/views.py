@@ -22,7 +22,7 @@ def addNote(request):
             title = request.POST.get('title'),
             body = request.POST.get('body')
         )
-        return redirect('notes-list')
+        return redirect('view-note', pk=note.pk)
     context['form'] = form
     return render(request, 'add-note.html', context)
 

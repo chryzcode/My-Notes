@@ -9,6 +9,9 @@ djangorestframework = "*"
 django-cors-headers = "*"
 django-allauth = "*"
 markdown = "*"
+whitenoise = "*"
+gunicorn = "*"
+django-heroku = "*"
 
 [dev-packages]
 

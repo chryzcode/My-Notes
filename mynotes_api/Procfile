@@ -1,0 +1,1 @@
+web: gunicorn mynotes_api.wsgi --log-file -
