@@ -1,4 +1,6 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %} 
+{% load apply_markdown %}
+{% block content %}
 <div class="notes-container">
   <div class="note-detail-header">
     
@@ -9,6 +11,6 @@
     </span>
   </div>
   <h4 class="a-note-title">{{note}}</h4>
-  <p>{{ note.body }}</p>
+  <div class="note-body">{{ note.body|convert_markdown|safe }}</div>
 </div>
 {% endblock %}

@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from apis.models import Note
 from .forms import addNoteForm
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
 
 # Create your views here.
 
@@ -44,10 +45,18 @@ def viewNote(request, pk):
     context['note'] = note
     return render(request, 'view-note.html', context)
 
+@login_required(login_url='login')
 def deleteNote(request, pk):
     note = Note.objects.get(pk=pk)
-    if request.method == 'POST':
-        note.delete()
-        return redirect('notes-list')
+    note.delete()
+    return redirect('notes-list')
+
+@login_required(login_url='login')
+def deleteUser(request, pk):
+    user = User.objects.get(pk=pk)
+    user.delete()
+    return redirect('login')
+
+    
 
 
