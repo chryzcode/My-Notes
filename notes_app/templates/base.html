@@ -46,8 +46,8 @@
           {{ request.user }}
         </a>
         <ul class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
-          <li><a style="color: orange;" class="dropdown-item" href="{% url 'delete-user' user.pk %}">Delete acc</a></li>
           <li class="nav-item"><a style="color: orange;" class="nav-link" href="{% url 'logout' %}">Log out</a></li>
+          <li><a style="color: orange;" class="dropdown-item" href="{% url 'delete-user' user.pk %}">Delete acc</a></li>
       </ul>
   </div>
   {% endif %}

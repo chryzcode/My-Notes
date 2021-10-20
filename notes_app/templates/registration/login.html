@@ -4,6 +4,9 @@
 <title>{% block title %}Sign In || My Note App{% endblock %}</title>
 {% block content %}
 
+{% if user.is_authenticated %}
+<p></p>
+{% else %}
 <div class="login-page-container">
     <h3 class="page-header" >Sign In</h3>
     <div class="login-container">
@@ -12,4 +15,5 @@
     </div>
 </div>
 <p class="markdown-support-note">markdown supported</p>
+{% endif %}
 {% endblock %}
