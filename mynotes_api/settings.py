@@ -12,8 +12,6 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 import os
 from pathlib import Path
-import django_heroku
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -77,6 +75,8 @@ TEMPLATES = [
         },
     },
 ]
+
+SITE_ID = 4
 
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
@@ -161,4 +161,5 @@ LOGOUT_REDIRECT_URL = "login"
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Activate Django_heroku.
+import django_heroku
 django_heroku.settings(locals())
