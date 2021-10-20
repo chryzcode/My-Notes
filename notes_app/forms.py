@@ -9,6 +9,6 @@ class addNoteForm(forms.ModelForm):
         fields = ['title', 'body']
 
         widgets={
-                'title':forms.TextInput(attrs={'class':'form-control'}),
-                'body':forms.Textarea(attrs={'class':'form-control'}),
+                'title':forms.TextInput(attrs={'class':'form-control', 'placeholder':'Note title'}),
+                'body':forms.Textarea(attrs={'class':'form-control',  'placeholder':'Start writing...'}),
         }

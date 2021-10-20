@@ -1,17 +1,19 @@
-{% extends 'base.html' %}
-{% block content %}
+{% extends 'base.html' %} {% block content %}
 <div class="notes-container">
-<div class="note-header">
-    <h5><span class="note-logo">&#9782;</span>{{request.user}}'s note</h5>
-    <p class="note-count">{{notes.count}}</p>
+  <div class="note-header">
+    <h5>
+      <span class="note-logo">&#9782;</span>{{request.user}}'s note
+      <span class="note-count">{{notes.count}}</span>
+    </h5>
+    <a href="{% url 'add-note' %}"><span id="add-note-icon" class="material-icons">add_circle</span></a>
+  </div>
+  {% for note in notes %}
+  <div class="note-list">
+    <div class="note-title"><a href="{% url 'view-note' note.pk %}">{{ note }}</a>
+    <small class="note-created">{{note.created}}</small>
+    </div>  
+  </div>
+
+  {% endfor %}
 </div>
-{% for note in notes %}
-    <div class="note-list">
-         <div class="note-title"><a href="{% url 'view-note' note.pk %}">{{ note }}</a></div>
-    </div>
-    
-{% endfor %}
-</div>
-{{request.user}}
-<a href="{% url 'add-note' %}">Add note</a>
 {% endblock %}
