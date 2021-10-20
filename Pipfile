@@ -6,7 +6,6 @@ name = "pypi"
 [packages]
 django = "*"
 djangorestframework = "*"
-django-cors-headers = "*"
 django-allauth = "*"
 markdown = "*"
 whitenoise = "*"
