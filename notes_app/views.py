@@ -29,31 +29,37 @@ def addNote(request):
 @login_required(login_url='login')
 def editNote(request, pk):
     note = Note.objects.get(pk = pk)
-    form = addNoteForm(instance=note)
-    if request.method == 'POST':
-        form = addNoteForm(request.POST, instance=note)
-        if form.is_valid():
-            form.save()
-            return redirect('view-note', pk=note.pk)
-    context = {'form':form}
-    return render(request, 'edit-note.html', context)
+    if request.user.id == note.user.id:
+        form = addNoteForm(instance=note)
+        if request.method == 'POST':
+            form = addNoteForm(request.POST, instance=note)
+            if form.is_valid():
+                form.save()
+                return redirect('view-note', pk=note.pk)
+        context = {'form':form}
+        return render(request, 'edit-note.html', context)
+    return redirect('notes-list')
 
 @login_required(login_url='login')
 def viewNote(request, pk):
     context = {}
     note = Note.objects.get(pk = pk)
-    context['note'] = note
-    return render(request, 'view-note.html', context)
+    if request.user.id == note.user.id:
+        context['note'] = note
+        return render(request, 'view-note.html', context)
+    return redirect('notes-list')
 
 @login_required(login_url='login')
 def deleteNote(request, pk):
     note = Note.objects.get(pk=pk)
-    note.delete()
+    if request.user.id == note.user.id:
+        note.delete()
+        return redirect('notes-list')
     return redirect('notes-list')
 
 @login_required(login_url='login')
-def deleteUser(request, pk):
-    user = User.objects.get(pk=pk)
+def deleteUser(request):
+    user = request.user
     user.delete()
     return redirect('login')
 
