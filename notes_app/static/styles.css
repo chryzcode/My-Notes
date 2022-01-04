@@ -189,9 +189,23 @@ label{
     margin-top: 10px;
     color: orange;
     text-align: center;
-
 }
 
+.dev-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 100px;
+  font-size: 25px;
+}
+
+.dev-info > div > a{
+  text-decoration: underline !important;
+}
+
+.dev-info > a > i{
+    font-size: 40px;
+}
 
 @media all and (min-width: 100px) and (max-width: 600px) {
     .notes-container{
