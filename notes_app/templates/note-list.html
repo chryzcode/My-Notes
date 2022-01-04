@@ -1,4 +1,4 @@
-{% extends 'base.html' %} 
+{% extends 'base.html' %}
 <title>{% block title %}Note list || My Note App{% endblock %}</title>
 {% block content %}
 <div class="notes-container">
@@ -11,11 +11,16 @@
   </div>
   {% for note in notes %}
   <div class="note-list">
-    <div class="note-title"><a href="{% url 'view-note' note.pk %}">{{ note }}</a>
-    <small class="note-created">{{note.created}}</small>
-    </div>  
+    <div class="note-title">
+      <a href="{% url 'view-note' note.pk %}">{{ note }}</a>
+      <small class="note-created">{{note.created}}</small>
+    </div>
   </div>
 
   {% endfor %}
+</div>
+<div class="dev-info">
+  <span>Developed by <a href="https://github.com/chryz-code" target="_blank" rel="noopener noreferrer">CODE</a></span>
+  <a href="https://github.com/chryz-code/My-Notes"><i class="fa fa-github"></i></a>
 </div>
 {% endblock %}

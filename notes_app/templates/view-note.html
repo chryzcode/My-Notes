@@ -1,17 +1,19 @@
-{% extends 'base.html' %} 
-{% load apply_markdown %}
+{% extends 'base.html' %} {% load apply_markdown %}
 <title>{% block title %}Note || My Note App{% endblock %}</title>
 {% block content %}
 <div class="notes-container">
   <div class="note-detail-header">
-    
-      <a href="{% url 'notes-list' %}"><span id="back-to-notes-list" class="material-icons">chevron_left</span></a>
-      <span class="icons">
+    <a href="{% url 'notes-list' %}"><span id="back-to-notes-list" class="material-icons">chevron_left</span></a>
+    <span class="icons">
       <a href="{% url 'edit-note' note.pk%}"><span id="edit-note" class="material-icons">edit</span></a>
       <a href="{% url 'delete-note' note.pk%}"><span id="delete-note" class="material-icons"> delete </span></a>
     </span>
   </div>
   <h4 class="a-note-title">{{note}}</h4>
   <div class="note-body">{{ note.body|convert_markdown|safe }}</div>
+</div>
+<div class="dev-info">
+  <span>Developed by <a href="https://github.com/chryz-code" target="_blank" rel="noopener noreferrer">CODE</a></span>
+  <a href="https://github.com/chryz-code/My-Notes"><i class="fa fa-github"></i></a>
 </div>
 {% endblock %}

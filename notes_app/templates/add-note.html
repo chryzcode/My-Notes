@@ -3,12 +3,15 @@
 {% block content %}
 
 <div class="notes-container">
-    <h4 class="a-note-title" >Add a note</h4>
-    <form method="POST">
-    {% csrf_token %}
-    {{ form.as_p }}
+  <h4 class="a-note-title">Add a note</h4>
+  <form method="POST">
+    {% csrf_token %} {{ form.as_p }}
     <button class="btn btn-secondary sm" type="submit">save</button>
-</form>
+  </form>
+</div>
+<div class="dev-info">
+  <span>Developed by <a href="https://github.com/chryz-code" target="_blank" rel="noopener noreferrer">CODE</a></span>
+  <a href="https://github.com/chryz-code/My-Notes"><i class="fa fa-github"></i></a>
 </div>
 
 {% endblock %}
