@@ -202,6 +202,7 @@ label {
 
 .dev-info > div > a {
   text-decoration: underline !important;
+  color: orange;
 }
 
 .dev-info > a > i {
