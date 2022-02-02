@@ -200,7 +200,7 @@ label {
   color: orange;
 }
 
-.dev-info > div > a {
+.dev-info > span > a {
   text-decoration: underline !important;
   color: orange !important;
 }
